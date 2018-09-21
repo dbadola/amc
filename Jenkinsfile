@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Setting up the environment') {
             steps {
-                sh " rm -r *; git clone https://github.com/dbadola/amc.git; cd amc"
+                sh " rm -rf *; git clone https://github.com/dbadola/amc.git; cd amc"
             }
         }
         stage('terrafrom version') {
