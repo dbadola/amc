@@ -7,7 +7,7 @@ pipeline {
   stages {
         stage('Setting up the environment') {
             steps {
-                sh "sudo rm -r *; git clone https://github.com/dbadola/amc.git; cd amc"
+                sh "sudo cd /home/bitnami/; sudo rm -r *; sudo git clone https://github.com/dbadola/amc.git; sudo cd amc"
             }
         }
         stage('terrafrom version') {
