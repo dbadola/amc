@@ -1,7 +1,5 @@
 provider "aws" {
   region = "eu-west-2"
-  shared_credentials_file = "~/.aws/credential"
-  profile = "default"
 }
 
 data "aws_ami" "ubuntu" {
