@@ -12,7 +12,7 @@ pipeline {
         }
          stage('terrafrom version') {
             steps {
-                sh "ping -c 2 www.google.com"
+                sh "terraform --version"
             }
         }
     }
