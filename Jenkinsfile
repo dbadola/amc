@@ -7,7 +7,7 @@ pipeline {
   stages {
         stage('Setting up the environment') {
             steps {
-                sh "sudo cd /home/bitnami/"
+                sh "cd /home/bitnami/"
             }
         }
         stage('terrafrom version') {
