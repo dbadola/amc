@@ -1,5 +1,6 @@
 provider "aws" {
   region = "eu-west-2"
+  credentials = "~/.aws/credentail"
 }
 
 data "aws_ami" "ubuntu" {
