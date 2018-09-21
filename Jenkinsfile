@@ -7,7 +7,7 @@ pipeline {
   stages {
         stage('Setting up the environment') {
             steps {
-                sh " rm -rf *; git clone https://github.com/dbadola/amc.git"
+                sh "whoami; rm -rf *; git clone https://github.com/dbadola/amc.git"
             }
         }
         stage('terrafrom version') {
