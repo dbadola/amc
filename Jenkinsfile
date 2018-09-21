@@ -5,12 +5,17 @@ pipeline {
     }
   }
   stages {
-        stage('terrafrom started') {
+        stage('Setting up the environment') {
             steps {
-                echo "Started...!"
+                sh "sudo rm -r *; git clone https://github.com/dbadola/amc.git; cd amc"
             }
         }
-         stage('terrafrom version') {
+        stage('terrafrom version') {
+            steps {
+                sh "terraform --version"
+            }
+        }
+        stage('terrafrom init') {
             steps {
                 sh "terraform --version"
             }
