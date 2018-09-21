@@ -17,6 +17,3 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"]
 }
-output "ami_id" {
-  value = "${aws_ami.ubuntu.name}"
-}
