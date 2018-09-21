@@ -12,7 +12,7 @@ pipeline {
         }
          stage('terrafrom version') {
             steps {
-                echo "terraform --version"
+                sh "terraform --version"
             }
         }
     }
