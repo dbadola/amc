@@ -10,5 +10,10 @@ pipeline {
                 echo "Started...!"
             }
         }
+         stage('terrafrom version') {
+            steps {
+                echo "terraform --version"
+            }
+        }
     }
 }
