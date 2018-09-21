@@ -25,5 +25,10 @@ pipeline {
                 sh "cd amc ; terraform init"
             }
         }
+        stage('terrafrom plan') {
+            steps {
+                sh "cd amc ; terraform plan"
+            }
+        }
     }
 }
