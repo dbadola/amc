@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Setting up the environment') {
             steps {
-                sh " rm -rf *; git clone https://github.com/dbadola/amc.git; cd amc"
+                sh " rm -rf *; git clone https://github.com/dbadola/amc.git"
             }
         }
         stage('terrafrom version') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('terrafrom init') {
             steps {
-                sh "pwd; terraform init"
+                sh "cd amc ; terraform init"
             }
         }
     }
