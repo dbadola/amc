@@ -5,11 +5,6 @@ pipeline {
     }
   }
   stages {
-        stage('Current Directory') {
-            steps {
-                sh "pwd"
-            }
-        }
         stage('Setting up the environment') {
             steps {
                 sh " rm -rf *; git clone https://github.com/dbadola/amc.git"
