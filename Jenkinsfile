@@ -4,10 +4,15 @@ pipeline {
       label 'master'
     }
   }
-  stages {
+  stages {        
+        stage('Building') {
+            steps {
+                sh "whoami; pwd"
+            }
+        }
         stage('Setting up the environment') {
             steps {
-                sh "whoami; rm -rf *; git clone https://github.com/dbadola/amc.git"
+                sh "rm -rf *; git clone https://github.com/dbadola/amc.git"
             }
         }
         stage('terrafrom version') {
