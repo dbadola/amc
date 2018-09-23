@@ -31,7 +31,10 @@ pipeline {
             }
         }
         stage('Slack') {
-          slackSend baseUrl: 'https://salesforcesecurity.slack.com/services/hooks/jenkins-ci/', channel: '#build', message: 'Hi', tokenCredentialId: 'Jenkins-Slack'
-        }
+          steps {
+            slackSend baseUrl: 'https://salesforcesecurity.slack.com/services/hooks/jenkins-ci/', channel: '#build', message: 'Hi', tokenCredentialId: 'Jenkins-Slack'
+          }
+         }
+          
     }
 }
