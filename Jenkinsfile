@@ -30,5 +30,8 @@ pipeline {
                 sh "cd amc ; terraform plan"
             }
         }
+        stage('Slack') {
+          slackSend baseUrl: 'https://salesforcesecurity.slack.com/services/hooks/jenkins-ci/', channel: '#build', message: 'Hi', tokenCredentialId: 'Jenkins-Slack'
+        }
     }
 }
