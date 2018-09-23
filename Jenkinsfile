@@ -30,14 +30,14 @@ pipeline {
                 sh "cd amc ; terraform plan"
             }
         }
-        post ('Slack') {
+        post {
           success {
             slackSend baseUrl: 'https://salesforcesecurity.slack.com/services/hooks/jenkins-ci/', channel: '#build', message: 'Build Complete', tokenCredentialId: 'Jenkins-Slack'
           }
           failure {
             slackSend baseUrl: 'https://salesforcesecurity.slack.com/services/hooks/jenkins-ci/', channel: '#build', message: 'Build Failed', tokenCredentialId: 'Jenkins-Slack'
           }
-         }
+        }
           
     }
 }
