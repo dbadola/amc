@@ -3,6 +3,14 @@ pipeline {
     node {
       label 'master'
     }
+  post {
+     success {
+            slackSend baseUrl: 'https://salesforcesecurity.slack.com/services/hooks/jenkins-ci/', channel: '#build', message: 'Build Complete', tokenCredentialId: 'Jenkins-Slack'
+          }
+     failure {
+            slackSend baseUrl: 'https://salesforcesecurity.slack.com/services/hooks/jenkins-ci/', channel: '#build', message: 'Build Failed', tokenCredentialId: 'Jenkins-Slack'
+          }
+       }     
   }
   stages {        
         stage('Building') {
@@ -30,14 +38,6 @@ pipeline {
                 sh "cd amc ; terraform plan"
             }
         }
-        post {
-          success {
-            slackSend baseUrl: 'https://salesforcesecurity.slack.com/services/hooks/jenkins-ci/', channel: '#build', message: 'Build Complete', tokenCredentialId: 'Jenkins-Slack'
-          }
-          failure {
-            slackSend baseUrl: 'https://salesforcesecurity.slack.com/services/hooks/jenkins-ci/', channel: '#build', message: 'Build Failed', tokenCredentialId: 'Jenkins-Slack'
-          }
-        }
-          
+
     }
 }
